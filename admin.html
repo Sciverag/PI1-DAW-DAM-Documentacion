@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Panel de Administración</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="admin-container">
+  <h1>Panel de Administración</h1>
+  <nav class="nav">
+    <button class="tablink" onclick="openTab(event, 'Movies')">Películas</button>
+    <button class="tablink" onclick="openTab(event, 'Clients')">Clientes</button>
+  </nav>
+
+  <div id="Movies" class="tabcontent hidden">
+    <h2>Películas</h2>
+    <button onclick="showAddMovieForm()">Añadir Película</button>
+    <div id="movieForm" style="display:none;">
+      <input type="text" id="movieTitle" placeholder="Título">
+      <input type="text" id="movieDirector" placeholder="Director">
+      <input type="number" id="movieYear" placeholder="Año">
+      <button onclick="addMovie()">Guardar Película</button>
+    </div>
+    <input type="text" id="movieSearch" oninput="filterMovies()" placeholder="Buscar películas...">
+    <table id="moviesList">
+      <!-- Las películas se cargarán aquí -->
+    </table>
+  </div>
+
+  <div id="Clients" class="tabcontent hidden">
+    <h2>Clientes</h2>
+    <button onclick="showAddClientForm()">Añadir Cliente</button>
+    <div id="clientForm" style="display:none;">
+      <input type="text" id="clientName" placeholder="Nombre del Cliente">
+      <input type="text" id="clientEmail" placeholder="Email">
+      <button onclick="addClient()">Guardar Cliente</button>
+    </div>
+    <input type="text" id="clientSearch" oninput="filterClients()" placeholder="Buscar clientes...">
+    <table id="clientsList">
+      <!-- Los clientes se cargarán aquí -->
+    </table>
+  </div>
+</div>
+<script src="js/app.js"></script>
+</body>
+</html>

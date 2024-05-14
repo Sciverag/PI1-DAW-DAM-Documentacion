@@ -1,0 +1,110 @@
+/* Estilos Generales */
+body, html {
+  margin: 10vh auto;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: #e8eaf6;
+  color: #273c75;
+}
+
+h1, h2 {
+  color: #192a56;
+  text-align: center;
+}
+
+/* Estilo del contenedor principal para login y admin */
+.login-container, .admin-container {
+  max-width: 960px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: #ffffff;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+  border-radius: 8px;
+}
+
+/* Formularios generales */
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+input[type='text'], input[type='password'], input[type='number'], input[type='email'] {
+  padding: 12px;
+  margin-bottom: 20px;
+  border: 2px solid #bdc3c7;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+button {
+  padding: 12px;
+  color: #ffffff;
+  background-color: #273c75;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #192a56;
+}
+
+#movieForm, #clientForm {
+  margin-bottom: 20px;
+}
+
+.nav button {
+  padding: 10px 20px;
+  background-color: #f8f9fa;
+  color: #273c75;
+  border: 2px solid #dcdde1;
+  margin-right: 5px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.nav button.active, .nav button:hover {
+  background-color: #273c75;
+  color: white;
+  border-color: #273c75;
+}
+
+/* Estilos de las pestañas de contenido */
+.tabcontent {
+  padding: 20px;
+  border: 2px solid #bdc3c7;
+  border-top: none;
+}
+
+/* Estilos para las tablas */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+th, td {
+  text-align: left;
+  padding: 8px;
+  border-bottom: 2px solid #bdc3c7; /* Línea más visible */
+}
+
+/* Media Queries para Responsividad */
+@media (max-width: 768px) {
+  .login-container, .admin-container {
+    margin: 1rem;
+    padding: 1rem;
+  }
+
+  .nav button {
+    width: 100%;
+    margin-bottom: 5px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .nav button {
+    font-size: 14px;
+  }
+}
