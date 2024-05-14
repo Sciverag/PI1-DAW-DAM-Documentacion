@@ -1,3 +1,4 @@
+const ipServer = "http://172.30.198.206:8080";
 function openTab(evt, tabName) {
   var i, tabcontent, tablinks;
 
@@ -17,44 +18,35 @@ function openTab(evt, tabName) {
 document.addEventListener('DOMContentLoaded', function() {
   document.querySelector('.tablink').click();
 });
-function showAddMovieForm() {
-  document.getElementById('movieForm').style.display = 'block';
+function showAddContentForm() {
+  document.getElementById('contentForm').style.display = 'block';
 }
 
-function addMovie() {
-  const title = document.getElementById('movieTitle').value;
-  const director = document.getElementById('movieDirector').value;
-  const year = document.getElementById('movieYear').value;
-  // LLamar api cuando este creada.
-  console.log('Añadiendo película:', title, director, year);
+function addContent() {
+  const title = document.getElementById('contentTitle').value;
+  const director = document.getElementById('contentDirector').value;
+  const year = document.getElementById('contentYear').value;
+  fetch(ipServer + "/contenido/")
+    .then(response => response.json())
+    .then(json => console.log(json));
+  console.log('Añadiendo contenido:', title, director, year);
 }
 
-function filterMovies() {
-  const search = document.getElementById('movieSearch').value.toLowerCase();
-  const movies = document.querySelectorAll('#moviesList tr');
-  movies.forEach(movie => {
-    const visible = movie.textContent.toLowerCase().includes(search);
-    movie.style.display = visible ? '' : 'none';
-  });
-}
 function showAddClientForm() {
   document.getElementById('clientForm').style.display = 'block';
 }
 
 function addClient() {
-  const name = document.getElementById('clientName').value;
+  const nombre = document.getElementById('clientName').value;
+  const contrasenya = document.getElementById('clientPassword').value;
+  const apellido = document.getElementById('clientLastName').value;
   const email = document.getElementById('clientEmail').value;
-  // LLamar api cuando este creada
-  console.log('Añadiendo cliente:', name, email);
+  const usuario = document.getElementById('clientEmail').value;
+  fetch(ipServer + "/usuario/")
+    .then(response => response.json())
+    .then(json => console.log(json));
+  console.log('Añadiendo cliente: ',usuario, nombre, apellido , contrasenya , email);
 }
 
-function filterClients() {
-  const search = document.getElementById('clientSearch').value.toLowerCase();
-  const clients = document.querySelectorAll('#clientsList tr');
-  clients.forEach(client => {
-    const visible = client.textContent.toLowerCase().includes(search);
-    client.style.display = visible ? '' : 'none';
-  });
-}
 
 
