@@ -11,11 +11,11 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/Theme.MyWeatherBase"
+        android:theme="@style/Theme.MiraVereda"
         tools:targetApi="31"
         android:usesCleartextTraffic="true">
         <activity
-            android:name=".activities.MainActivity"
+            android:name="es.ieslavereda.activities.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -23,6 +23,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name="es.ieslavereda.activities.CrearCuentaActivity"/>
+        <activity android:name="es.ieslavereda.activities.ReiniciarContrasenyaActivity"/>
+        <activity android:name="es.ieslavereda.activities.ContenidoActivity"/>
     </application>
 
 </manifest>

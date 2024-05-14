@@ -1,7 +1,7 @@
-package com.example.ieslavereda.API;
+package es.ieslavereda.API;
 
 
-import com.example.ieslavereda.base.Parameters;
+import es.ieslavereda.base.Parameters;
 
 import java.util.List;
 

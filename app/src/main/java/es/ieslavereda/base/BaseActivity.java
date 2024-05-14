@@ -1,4 +1,4 @@
-package com.example.ieslavereda.base;
+package es.ieslavereda.base;
 
 import android.os.Bundle;
 import android.os.Handler;
@@ -6,7 +6,7 @@ import android.os.Looper;
 import android.view.ViewGroup;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.ieslavereda.API.Connector;
+import es.ieslavereda.API.Connector;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;

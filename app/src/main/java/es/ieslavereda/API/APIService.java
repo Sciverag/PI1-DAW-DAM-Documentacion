@@ -1,4 +1,4 @@
-package com.example.ieslavereda.API;
+package es.ieslavereda.API;
 
 import okhttp3.RequestBody;
 import okhttp3.ResponseBody;

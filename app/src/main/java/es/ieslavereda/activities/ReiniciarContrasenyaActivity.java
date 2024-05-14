@@ -1,9 +1,9 @@
-package com.example.ieslavereda.activities;
+package es.ieslavereda.activities;
 
 import android.os.Bundle;
 
-import com.example.ieslavereda.base.BaseActivity;
-import com.example.myweatherbase.R;
+import es.ieslavereda.MiraVereda.R;
+import es.ieslavereda.base.BaseActivity;
 
 public class ReiniciarContrasenyaActivity extends BaseActivity {
 

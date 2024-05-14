@@ -1,4 +1,4 @@
-package com.example.ieslavereda.activities;
+package es.ieslavereda.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,16 +9,16 @@ import android.widget.Toast;
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 
-import com.example.ieslavereda.base.BaseActivity;
-import com.example.myweatherbase.R;
+import es.ieslavereda.MiraVereda.R;
+import es.ieslavereda.activities.model.Root;
+import es.ieslavereda.base.BaseActivity;
+
 
 public class MainActivity extends BaseActivity {
 
-    private EditText usuario;
-    private EditText contrasenya;
-    private Button iniciarSesion;
-    private Button crearCuenta;
-    private Button reiniciarContrasenya;
+    private EditText usuario, contrasenya;
+    private Button iniciarSesion, crearCuenta, reiniciarContrasenya;
+    private Root root;
     
     
     @Override
@@ -39,15 +39,22 @@ public class MainActivity extends BaseActivity {
         ActivityResultLauncher<Intent> resultLauncher = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), result -> {
                     if (result.getResultCode() == RESULT_OK) {
 
+                        Toast.makeText(this, "Cuenta creada correctamente", Toast.LENGTH_SHORT).show();
                     } else {
-
+                        Toast.makeText(this, "Creación de cuenta cancelada", Toast.LENGTH_SHORT).show();
                     }
                 });
         resultLauncher.launch(intent);
     }
 
     public void IniciarSesion() {
-        // if (credenciales correctos) { iniciar PeliculasActivity }
+//        if (llamadaAPI()==1) {
+//            Intent intent = new Intent(this, ContenidoActivity.class);
+//            startActivity(intent);
+//            Toast.makeText(this, "Sesión iniciada como '" + usuario.getText() + "'", Toast.LENGTH_SHORT).show();
+//        } else {
+//            Toast.makeText(this, "Usuario o contraseña incorrectos", Toast.LENGTH_SHORT).show();
+//        }
 
     }
 

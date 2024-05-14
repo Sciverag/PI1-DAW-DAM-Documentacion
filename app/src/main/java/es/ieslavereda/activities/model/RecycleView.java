@@ -1,4 +1,4 @@
-package com.example.ieslavereda.activities.model;
+package es.ieslavereda.activities.model;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -10,13 +10,10 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.myweatherbase.R;
-import com.example.myweatherbase.activities.model.Root;
-import com.example.myweatherbase.base.ImageDownloader;
-import com.example.myweatherbase.base.Parameters;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
+import es.ieslavereda.MiraVereda.R;
+import es.ieslavereda.base.ImageDownloader;
+import es.ieslavereda.base.Parameters;
 
 
 public class RecycleView extends RecyclerView.Adapter<RecycleView.ViewHolder> {
@@ -44,7 +41,11 @@ public class RecycleView extends RecyclerView.Adapter<RecycleView.ViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-
+        Contenido contenido = root.list.get(position);
+        ImageDownloader.downloadImage(Parameters.ICON_URL_PRE + contenido.imagen + Parameters.ICON_URL_POST, holder.imagen);
+        holder.titulo.setText(contenido.titulo);
+        holder.valoracion.setText(contenido.puntuacioMedia+"★");
+        holder.descripcion.setText(contenido.descripcion);
     }
 
     @Override
@@ -54,13 +55,13 @@ public class RecycleView extends RecyclerView.Adapter<RecycleView.ViewHolder> {
 
     public static class ViewHolder extends RecyclerView.ViewHolder{
         private ImageView imagen;
-        private TextView nombre, valoracion, descripcion;
+        private TextView titulo, valoracion, descripcion;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            imagen = itemView.findViewById(R.id.imageWeather);
-            nombre = itemView.findViewById(R.id.textDay);
-            valoracion = itemView.findViewById(R.id.textDate);
-            descripcion = itemView.findViewById(R.id.textDescripcion);
+            imagen = itemView.findViewById(R.id.imagenPelicula);
+            titulo = itemView.findViewById(R.id.textViewNombrePelicula);
+            valoracion = itemView.findViewById(R.id.textViewPuntuacionPelicula);
+            descripcion = itemView.findViewById(R.id.textViewDescripcionPelicula);
         }
     }
 

@@ -1,4 +1,4 @@
-package com.example.ieslavereda.API;
+package es.ieslavereda.API;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;

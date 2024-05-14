@@ -1,9 +1,10 @@
-package com.example.ieslavereda.API;
+package es.ieslavereda.API;
 
 
-import com.example.ieslavereda.base.Parameters;
+import es.ieslavereda.base.Parameters;
 
 import java.io.IOException;
+
 import okhttp3.RequestBody;
 import okhttp3.ResponseBody;
 import retrofit2.Call;

@@ -1,4 +1,4 @@
-package com.example.ieslavereda.base;
+package es.ieslavereda.base;
 
 public interface CallInterface {
 
