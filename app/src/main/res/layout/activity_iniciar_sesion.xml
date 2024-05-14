@@ -63,6 +63,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
         android:backgroundTint="#FB7D39"
+        android:onClick="CrearCuenta"
         android:text="Crear cuenta"
         android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/buttonReiniciarContrasenya"

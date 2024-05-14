@@ -1,15 +1,18 @@
 package com.example.ieslavereda.activities;
 
-import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
-import androidx.appcompat.app.AppCompatActivity;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 
+import com.example.ieslavereda.base.BaseActivity;
 import com.example.myweatherbase.R;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends BaseActivity {
 
     private EditText usuario;
     private EditText contrasenya;
@@ -18,7 +21,6 @@ public class MainActivity extends AppCompatActivity {
     private Button reiniciarContrasenya;
     
     
-    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,8 +31,38 @@ public class MainActivity extends AppCompatActivity {
         crearCuenta = findViewById(R.id.buttonCrearCuenta);
         reiniciarContrasenya = findViewById(R.id.buttonReiniciarContrasenya);
 
-        crearCuenta.setOnClickListener(view -> {
 
-        });
     }
+
+    public void CrearCuenta() {
+        Intent intent = new Intent(this, CrearCuentaActivity.class);
+        ActivityResultLauncher<Intent> resultLauncher = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), result -> {
+                    if (result.getResultCode() == RESULT_OK) {
+
+                    } else {
+
+                    }
+                });
+        resultLauncher.launch(intent);
+    }
+
+    public void IniciarSesion() {
+        // if (credenciales correctos) { iniciar PeliculasActivity }
+
+    }
+
+    public void ReiniciarContrasenya() {
+        Intent intent = new Intent(this, ReiniciarContrasenyaActivity.class);
+        // intent.putExtra("Usuario", nombreUsuario);
+        // intent.putExtra("Contraseña", contraseña);
+        ActivityResultLauncher<Intent> resultLauncher = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), result -> {
+            if (result.getResultCode() == RESULT_OK) {
+                //Cambiar contraseña del usuario a la introducida
+            } else {
+                Toast.makeText(this, "Cambio de contraseña cancelado", Toast.LENGTH_SHORT).show();
+            }
+        });
+        resultLauncher.launch(intent);
+    }
+
 }
